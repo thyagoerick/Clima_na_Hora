@@ -8,15 +8,17 @@ import {
 } from 'react-native';
 import Historico from './componentes/Historico';
 import SearchWeather from './componentes/SearchWeather';
-
+import Guia from './componentes/Guia';
 // import { armazenarNoHistorico }  from './service/OracleCloudService'
 
 import * as oracleCloudService from './service/OracleCloudService'
 
+
 export default function App() {
   return(
     //<Historico />
-    <SearchWeather />
+    //<SearchWeather />
+    <Guia />
   )
 }
 //   const testeOracle = () => {
@@ -45,12 +47,12 @@ export default function App() {
 //     </View>
 //   );
 // }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
 

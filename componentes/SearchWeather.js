@@ -8,13 +8,15 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import { obterPrevisoes } from '../service/WeatherMapService'
+import { inline } from 'react-native-web/dist/cjs/exports/StyleSheet/compiler'
+import { Input } from '@rneui/base'
 
 const SearchWeather = () => {
 
   const [itens, setItens] = useState([])
 
   const buscar = () => {
-    const cidade = "São Paulo"
+    const cidade = "Diadema"
     obterPrevisoes(cidade)
     .then(res => {
       console.log(res)
@@ -29,18 +31,31 @@ const SearchWeather = () => {
   }
   return (
     <>
+      
+      
       <FlatList 
         data={itens}
         keyExtractor={item => item.dt}
         renderItem={p => (
-          <View>
-            <Text>Temp Max: {p.item.main.temp_max}{`\u00B0`}</Text>
-            <Image
-              style={{width: 50, height: 50}}
-              source={{
-                  uri: `http://openweathermap.org/img/wn/${p.item.weather[0].icon}.png`,
-              }}
-            />
+          <View style={{flexDirection: "row", padding: 20}}>
+            <View style={{margin:10}}>
+              <Text>Temp Max: {Math.ceil(p.item.main.temp_max, -2)}{`\u00B0`}</Text>
+              <Image
+                style={{width: 50, height: 50}}
+                source={{
+                    uri: `http://openweathermap.org/img/wn/${p.item.weather[0].icon}.png`,
+                }}
+              /> 
+            </View>
+            <View style={{margin:10}}>
+              <Text>Temp Min: {Math.floor(p.item.main.temp_min, -2)}{`\u00B0`}</Text>
+              <Image
+                style={{width: 50, height: 50}}
+                source={{
+                    uri: `http://openweathermap.org/img/wn/${p.item.weather[0].icon}.png`,
+                }}
+              /> 
+            </View>
           </View>
         )}
       />
@@ -53,4 +68,7 @@ const SearchWeather = () => {
 
 export default SearchWeather
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+
+})

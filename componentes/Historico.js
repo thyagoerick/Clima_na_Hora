@@ -16,7 +16,7 @@ const Historico = () => {
   return (
     <View>
       {
-       itens.map(item => <Text key={item.cod_historico}>{item.cidade}</Text>) 
+        itens.map(item => <Text key={item.cod_historico}>{item.cidade}</Text>)
       }
     </View>
   )

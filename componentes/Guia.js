@@ -1,8 +1,9 @@
 import React from 'react';
 import { Tab, Text, TabView } from '@rneui/themed';
-import { StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import Historico from './Historico';
 import SearchWeather from './SearchWeather';
+import '@fortawesome/free-solid-svg-icons';
 
 const Guia = () => {
 
@@ -23,7 +24,7 @@ const Guia = () => {
         <Tab.Item
           title="Pesquisar"
           titleStyle={{ fontSize: 12 }}
-          icon={{ name: 'timer', type: 'ionicon', color: 'white' }}
+          icon="fa-solid f002 "
         />
         <Tab.Item
           title="Historico"

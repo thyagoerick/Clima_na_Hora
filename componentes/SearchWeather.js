@@ -14,9 +14,11 @@ import { inline } from 'react-native-web/dist/cjs/exports/StyleSheet/compiler'
 const SearchWeather = () => {
 
   const [itens, setItens] = useState([])
+  const [state, setState] = 
+    useState({cidade: ''})
 
   const buscar = () => {
-    const cidade = "Diadema"
+    const cidade = state.cidade
     obterPrevisoes(cidade)
       .then(res => {
         console.log(res)
@@ -33,8 +35,8 @@ const SearchWeather = () => {
     <>
       <TextInput
         style={styles.input}
-        
-        
+        onChangeText={cidade => setState({...state, cidade})}
+          value={state.cidade}
         placeholder='Digite o nome da cidade'
       />
 
@@ -66,7 +68,9 @@ const SearchWeather = () => {
       />
       <Button
         title='Buscar'
-        onPress={() => buscar()} />
+        onPress={() => buscar()}
+        
+        />
     </>
   )
 }

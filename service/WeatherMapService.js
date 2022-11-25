@@ -11,7 +11,9 @@ export const obterPrevisoes = (cidade) => {
       q: cidade,
       appid:'ef0b0973b783e0614ac87612ec04344b',
       units: 'metric',
-      cnt: 4
+      dt: 'UTC-3',
+      cnt: 10
+      
     }}
   )
 }

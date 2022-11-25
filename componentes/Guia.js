@@ -1,14 +1,13 @@
 import React from 'react';
-import { Tab, Text, TabView } from '@rneui/themed';
+import { Tab, TabView } from '@rneui/themed';
 import { StyleSheet } from 'react-native';
 import Historico from './Historico';
 import SearchWeather from './SearchWeather';
-import '@fortawesome/free-solid-svg-icons';
+//import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Guia = () => {
 
   const [index, setIndex] = React.useState(0);
-
 
   return (
     <>
@@ -24,7 +23,7 @@ const Guia = () => {
         <Tab.Item
           title="Pesquisar"
           titleStyle={{ fontSize: 12 }}
-          icon="fa-solid f002 "
+          icon={{ name: 'search', type: 'ionicon', color: 'white' }}
         />
         <Tab.Item
           title="Historico"

@@ -13,46 +13,45 @@ import Guia from './componentes/Guia';
 
 import * as oracleCloudService from './service/OracleCloudService'
 
+// const testeOracle = () => {
+
+//   const promise = oracleCloudService.armazenarNoHistorico({
+//     cidade: 'São Paulo'
+//   })
+//   // fconsole.log(promise)
+//   promise
+//   .then (res => {
+//     console.log(res)
+//   })
+//   .catch (erro => {
+//     console.log('erro: ', erro)
+//   })
+
+//   console.log("estamos livres para fazer outras coisas...")
+
+// }
+// return (
+//   <View style={styles.container}>     
+//    <Button 
+//     title='OK'
+//     onPress={() => testeOracle()}
+//    />
+//   </View>
+// )
+// const styles = StyleSheet.create({
+// container: {
+//   flex: 1,
+//   backgroundColor: '#fff',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+// },
+// });
+
 
 export default function App() {
   return(
-    //<Historico />
-    //<SearchWeather />
+
+    
     <Guia />
   )
-}
-//   const testeOracle = () => {
-
-//     const promise = oracleCloudService.armazenarNoHistorico({
-//       cidade: 'Sorocaba'
-//     })
-//     // fconsole.log(promise)
-//     promise
-//     .then (res => {
-//       console.log(res)
-//     })
-//     .catch (erro => {
-//       console.log('erro: ', erro)
-//     })
-
-//     console.log("estamos livres para fazer outras coisas...")
-
-//   }
-//   return (
-//     <View style={styles.container}>     
-//      <Button 
-//       title='OK'
-//       onPress={() => testeOracle()}
-//      />
-//     </View>
-//   );
-// }
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
+  };

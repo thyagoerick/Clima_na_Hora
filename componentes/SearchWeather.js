@@ -9,11 +9,12 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import { obterPrevisoes } from '../service/WeatherMapService'
-import { inline } from 'react-native-web/dist/cjs/exports/StyleSheet/compiler'
+
 import { Card } from '@rneui/themed'
 import { CardTitle } from '@rneui/base/dist/Card/Card.Title'
-import { armazenarNoHistorico }  from '../service/OracleCloudService'
+
 import * as oracleCloudService from '../service/OracleCloudService'
+import { format } from 'date-fns'
 
 const SearchWeather = () => {
 
@@ -41,7 +42,6 @@ const SearchWeather = () => {
     const promise = oracleCloudService.armazenarNoHistorico({
       cidade: state.cidade
     })
-    // fconsole.log(promise)
     promise
     .then (res => {
       console.log(res)
@@ -93,8 +93,7 @@ const SearchWeather = () => {
       />
       <Button
         title='Buscar'
-        onPress={() => buscar()}
-        
+        onPress={() => buscar()}     
         />
     </>
   )
@@ -122,20 +121,3 @@ const styles = StyleSheet.create({
     height: 50
   }
 })
-
-// return (
-//   <View style={styles.container}>     
-//    <Button 
-//     title='OK'
-//     onPress={() => testeOracle()}
-//    />
-//   </View>
-// )
-// const styles = StyleSheet.create({
-// container: {
-//   flex: 1,
-//   backgroundColor: '#fff',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-// },
-// });

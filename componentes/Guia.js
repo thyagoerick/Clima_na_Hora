@@ -3,7 +3,6 @@ import { Tab, TabView } from '@rneui/themed';
 import { StyleSheet } from 'react-native';
 import Historico from './Historico';
 import SearchWeather from './SearchWeather';
-//import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Guia = () => {
 
@@ -22,13 +21,13 @@ const Guia = () => {
       >
         <Tab.Item
           title="Pesquisar"
-          titleStyle={{ fontSize: 12 }}
+          titleStyle={styles.textSize}
           icon={{ name: 'search', type: 'ionicon', color: 'white' }}
         />
         <Tab.Item
           title="Historico"
-          titleStyle={{ fontSize: 12 }}
-          icon={{ name: 'heart', type: 'ionicon', color: 'white' }}
+          titleStyle={styles.textSize}
+          icon={{ name: 'book-outline', type: 'ionicon', color: 'white' }}
         />
       </Tab>
 
@@ -49,6 +48,9 @@ const styles = StyleSheet.create({
   item: {
     width: '100%',
     padding: 12
+  },
+  textSize: {
+    fontSize: 12
   }
 })
 

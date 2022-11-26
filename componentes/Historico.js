@@ -1,22 +1,22 @@
-import { StyleSheet, View } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import { Button, StyleSheet, View } from 'react-native'
+import React, { useState } from 'react'
 import { Card, ListItem } from '@rneui/themed'
 import { obterHistorico } from '../service/OracleCloudService'
 
 const Historico = () => {
   const [itens, setItens] = useState([])
-  useEffect(() => {
-    const vai = async () => {
-      const resultado = (await obterHistorico()).data.items
-      setItens(resultado)
-    }
-    vai()
-  }, [])
 
+  const vai = async () => {
+    const resultado = (await obterHistorico()).data.items.sort((a, b) => b.cod_historico - a.cod_historico)
+    setItens(resultado)
+  }
   return (
 
     <View>
-
+      <Button
+        title='Atualizar'
+        onPress={vai}
+      />
       {
         itens.map(item =>
           <Card ><ListItem key={item.cod_historico}>
@@ -30,6 +30,7 @@ const Historico = () => {
       }
 
     </View>
+
   )
 }
 
